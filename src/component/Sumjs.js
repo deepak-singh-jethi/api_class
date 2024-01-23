@@ -24,7 +24,10 @@ const Sumjs = () => {
   function getSum(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:9000/add", { ...nums })
+      .post("http://localhost:9000/add", {
+        num1: +nums["num1"],
+        num2: +nums["num2"],
+      })
       .then((response) => setResult(response.data.result))
       .catch((err) => console.log(err));
   }
@@ -42,7 +45,7 @@ const Sumjs = () => {
           type="number"
           placeholder="num1"
           onChange={(e) => {
-            setNums({ ...nums, num1: +e.target.value });
+            setNums({ ...nums, num1: e.target.value });
           }}
           value={nums.num1}
         />
@@ -50,7 +53,7 @@ const Sumjs = () => {
           type="number"
           placeholder="num2"
           onChange={(e) => {
-            setNums({ ...nums, num2: +e.target.value });
+            setNums({ ...nums, num2: e.target.value });
           }}
           value={nums.num2}
         />
