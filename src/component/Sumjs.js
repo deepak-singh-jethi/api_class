@@ -58,7 +58,7 @@ const Sumjs = () => {
           value={nums.num2}
         />
         <button onClick={getSum} style={{ width: "150px", padding: "10px" }}>
-          Get Sum
+          Get Sum of numbers
         </button>
       </form>
 
@@ -66,5 +66,3 @@ const Sumjs = () => {
     </div>
   );
 };
-
-export default Sumjs;
